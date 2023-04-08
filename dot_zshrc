@@ -908,3 +908,6 @@ zinit load urbainvaes/fzf-marks
 
 zinit light z-shell/F-Sy-H
 alias shopt='/usr/bin/shopt'
+
+CARGOPATH="/home/marinkitagawa/.cargo/bin/"
+echo $PATH | grep -q $CARGOPATH || export PATH="$PATH:$CARGOPATH"
