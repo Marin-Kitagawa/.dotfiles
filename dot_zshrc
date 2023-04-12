@@ -81,7 +81,7 @@ fi
 yay -Q | rg git-extras &>/dev/null || yay -S git-extras-git
 
 if [ ! -d ~/zsh_scripts ]; then
-  mcd zsh_scripts
+  mcd ~/zsh_scripts
   curl https://raw.githubusercontent.com/petervanderdoes/git-flow-completion/develop/git-flow-completion.zsh -o git-flow-completion.zsh
   source git-flow-completion.zsh
   cd $HOME
@@ -907,7 +907,26 @@ zinit ice wait'0' lucid
 zinit load urbainvaes/fzf-marks
 
 zinit light z-shell/F-Sy-H
+
+if ! command -v shopt &>/dev/null
+then
+  mcd ~/github
+  git clone https://github.com/larz258/Zshopt
+  cd Zshopt
+  sudo mv shopt /usr/bin/
+fi
 alias shopt='/usr/bin/shopt'
 
 CARGOPATH="/home/marinkitagawa/.cargo/bin/"
 echo $PATH | grep -q $CARGOPATH || export PATH="$PATH:$CARGOPATH"
+
+# Installing FiraCode Nerd Font
+install_FiraCode_Nerd_Font () {
+  curl -s https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest | jq '.assets[] | select(.name|match("FiraCode.zip$")) | .browser_download_url' | wget -qi -o ~/Downloads/FiraCode.zip
+  cd ~/Downloads
+  unzip FiraCode.zip
+  sudo mv * /usr/share/fonts/TTF
+}
+ls /usr/share/fonts/TTF/FiraCode* &>/dev/null || install_FiraCode_Nerd_Font
+
+export EDITOR=nvim
