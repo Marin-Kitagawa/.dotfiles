@@ -820,7 +820,17 @@ else
   cd $HOME
 fi
 
+# Installing FiraCode Nerd Font
+install_FiraCode_Nerd_Font () {
+  curl -s https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest | jq '.assets[] | select(.name|match("FiraCode.zip$")) | .browser_download_url' | wget -qi -
+  cd ~/Downloads
+  unzip FiraCode.zip
+  sudo mv * /usr/share/fonts/TTF
+}
+ls /usr/share/fonts/TTF/FiraCode* &>/dev/null || install_FiraCode_Nerd_Font
+cd $HOME
 cls
+
 if command -v neofetch &>/dev/null
 then
     neofetch
@@ -920,13 +930,5 @@ alias shopt='/usr/bin/shopt'
 CARGOPATH="/home/marinkitagawa/.cargo/bin/"
 echo $PATH | grep -q $CARGOPATH || export PATH="$PATH:$CARGOPATH"
 
-# Installing FiraCode Nerd Font
-install_FiraCode_Nerd_Font () {
-  curl -s https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest | jq '.assets[] | select(.name|match("FiraCode.zip$")) | .browser_download_url' | wget -qi -o ~/Downloads/FiraCode.zip
-  cd ~/Downloads
-  unzip FiraCode.zip
-  sudo mv * /usr/share/fonts/TTF
-}
-ls /usr/share/fonts/TTF/FiraCode* &>/dev/null || install_FiraCode_Nerd_Font
 
 export EDITOR=nvim
