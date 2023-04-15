@@ -92,17 +92,17 @@ if [ ! -d ~/zsh_scripts ]; then
 fi
 
 
-if [ ! -d ~/.oh-my-zsh/plugins/zsh-syntax-highlighting ]
+if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]
 then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
 
-if [ ! -d ~/.oh-my-zsh/plugins/zsh-autosuggestions ]
+if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]
 then
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
 
-if [ ! -d ~/.oh-my-zsh/plugins/you-should-use ]
+if [ ! -d ~/.oh-my-zsh/custom/plugins/you-should-use ]
 then
   git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
 fi
