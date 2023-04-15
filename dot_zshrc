@@ -102,6 +102,11 @@ then
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
 
+if [ ! -d ~/.oh-my-zsh/plugins/you-should-use ]
+then
+  git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
+fi
+
 plugins=(
     cp
     git
