@@ -4,4 +4,4 @@ Managed using `chezmoi`
 
 ## TODO
 
-- [ ] Switch to Fleek
+- [ ] Switch to `fleek`
