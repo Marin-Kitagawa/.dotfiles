@@ -512,7 +512,7 @@ import subprocess
 # stuff
 @hook.subscribe.startup_once
 def autostart():
-    xauto = os.path.expanduser('/home/unreal/.config/qtile/autostart_once.sh')# path to my script, under my user directory
+    xauto = os.path.expanduser('~/.config/qtile/autostart_once.sh')# path to my script, under my user directory
     subprocess.Popen([xauto])
 
 auto_fullscreen = True
