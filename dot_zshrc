@@ -931,6 +931,10 @@ zinit load lukechilds/zsh-better-npm-completion
 zinit ice wait'0' lucid
 zinit load Tarrasch/zsh-functional
 
+# zsh-vi-mode plugin
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
+
 # fzf marks for easier access
 zinit ice wait'0' lucid
 zinit load urbainvaes/fzf-marks
