@@ -842,12 +842,12 @@ fi
 
 # Installing FiraCode Nerd Font
 install_FiraCode_Nerd_Font () {
-  curl -s https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest | jq '.assets[] | select(.name|match("FiraCode.zip$")) | .browser_download_url' | wget -qi -
   cd ~/Downloads
+  curl -s https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest | jq '.assets[] | select(.name|match("FiraCode.zip$")) | .browser_download_url' | tr -d \" | wget -qi -
   unzip FiraCode.zip
-  sudo mv * /usr/share/fonts/TTF
+  sudo mv *.ttf /usr/share/fonts/TTF/
 }
-ls /usr/share/fonts/TTF/FiraCode* &>/dev/null || install_FiraCode_Nerd_Font
+ls /usr/share/fonts/TTF/Fira* &>/dev/null || install_FiraCode_Nerd_Font
 cd $HOME
 cls
 
@@ -957,7 +957,6 @@ then
   sudo mv shopt /usr/bin/
 fi
 alias shopt='/usr/bin/shopt'
-
 CARGOPATH="/home/marinkitagawa/.cargo/bin/"
 echo $PATH | grep -q $CARGOPATH || export PATH="$PATH:$CARGOPATH"
 
@@ -965,4 +964,4 @@ echo $PATH | grep -q $CARGOPATH || export PATH="$PATH:$CARGOPATH"
 export EDITOR=nvim
 
 # Installing Prezto
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+# source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
