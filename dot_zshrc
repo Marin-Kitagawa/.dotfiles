@@ -851,6 +851,8 @@ ls /usr/share/fonts/TTF/Fira* &>/dev/null || install_FiraCode_Nerd_Font
 cd $HOME
 cls
 
+alias neofetch="nyaofetch"
+
 if command -v neofetch &>/dev/null
 then
     neofetch
@@ -965,3 +967,16 @@ export EDITOR=nvim
 
 # Installing Prezto
 # source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
+ghcu () {
+    git clone https://github.com/$1
+}
+
+if ! command -v xclip &>/dev/null
+then
+  sudo pacman -S xclip
+fi
+
+ghcuc () {
+    git clone https://gihub.com/$(xclip -o)
+}
