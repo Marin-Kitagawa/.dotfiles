@@ -880,9 +880,10 @@ fi
 # eval "$(starship init zsh)"
 if command -v exa &>/dev/null
 then
-  alias ls='exa -alh'
-  alias ll='exa -alh'
-  alias l='exa -alh'
+  alias ls='exa --icons --long --all --group-directories-first --git --header'
+  alias ll='exa --icons --long --all --group-directories-first --git --header'
+  alias l='exa --icons --long --all --group-directories-first --git --header'
+
 fi
 
 alias z='zoxide'
