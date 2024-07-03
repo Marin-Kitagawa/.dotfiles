@@ -138,13 +138,6 @@ alias cb='sudo cp /etc/skel/.bashrc ~/.bashrc && source ~/.bashrc'
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /bin/zsh && echo 'Now log out.'"
 
-# switch between lightdm and sddm
-alias tolightdm="sudo pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings --noconfirm --needed ; sudo systemctl enable lightdm.service -f ; echo 'Lightm is active - reboot now'"
-alias tosddm="sudo pacman -S sddm --noconfirm --needed ; sudo systemctl enable sddm.service -f ; echo 'Sddm is active - reboot now'"
-alias toly="sudo pacman -S ly --noconfirm --needed ; sudo systemctl enable ly.service -f ; echo 'Ly is active - reboot now'"
-alias togdm="sudo pacman -S gdm --noconfirm --needed ; sudo systemctl enable gdm.service -f ; echo 'Gdm is active - reboot now'"
-alias tolxdm="sudo pacman -S lxdm --noconfirm --needed ; sudo systemctl enable lxdm.service -f ; echo 'Lxdm is active - reboot now'"
-
 # kill commands
 # quickly kill conkies
 alias kc='killall conky'
@@ -210,22 +203,19 @@ alias rg="rg --sort path"
 # get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
-# nano for important configuration files
+# $EDITOR for important configuration files
 # know what you do in these files
-alias nlxdm="sudo $EDITOR /etc/lxdm/lxdm.conf"
-alias nlightdm="sudo $EDITOR /etc/lightdm/lightdm.conf"
 alias npacman="sudo $EDITOR /etc/pacman.conf"
 alias ngrub="sudo $EDITOR /etc/default/grub"
 alias nconfgrub="sudo $EDITOR /boot/grub/grub.cfg"
 alias nmkinitcpio="sudo $EDITOR /etc/mkinitcpio.conf"
 alias nmirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
-alias narcomirrorlist='sudo nano /etc/pacman.d/arcolinux-mirrorlist'
 alias nsddm="sudo $EDITOR /etc/sddm.conf"
 alias nsddmk="sudo $EDITOR /etc/sddm.conf.d/kde_settings.conf"
 alias nfstab="sudo $EDITOR /etc/fstab"
 alias nnsswitch="sudo $EDITOR /etc/nsswitch.conf"
 alias nsamba="sudo $EDITOR /etc/samba/smb.conf"
-alias ngnupgconf="sudo nano /etc/pacman.d/gnupg/gpg.conf"
+alias ngnupgconf="sudo $EDITOR /etc/pacman.d/gnupg/gpg.conf"
 alias nhosts="sudo $EDITOR /etc/hosts"
 alias nb="$EDITOR ~/.bashrc"
 alias nz="$EDITOR ~/.zshrc"
@@ -238,19 +228,6 @@ alias fix-gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
 alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 alias fix-gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
 alias fix-keyserver="[ -d ~/.gnupg ] || mkdir ~/.gnupg ; cp /etc/pacman.d/gnupg/gpg.conf ~/.gnupg/ ; echo 'done'"
-
-# fixes
-alias fix-permissions="sudo chown -R $USER:$USER ~/.config ~/.local"
-alias keyfix="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias key-fix="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias keys-fix="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias fixkey="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias fixkeys="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias fix-key="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias fix-keys="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-alias fix-sddm-config="/usr/local/bin/arcolinux-fix-sddm-config"
-alias fix-pacman-conf="/usr/local/bin/arcolinux-fix-pacman-conf"
-alias fix-pacman-keyserver="/usr/local/bin/arcolinux-fix-pacman-gpg-conf"
 
 # maintenance
 alias big="expac -H M '%m\t%n' | sort -h | nl"
