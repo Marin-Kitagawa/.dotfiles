@@ -19,6 +19,7 @@ config = {
 	color_scheme = 'One Dark (Gogh)',
 	font = wezterm.font "FiraCode Nerd Font",
 	window_background_opacity = 0.8,
+	default_cursor_style = "BlinkingBar",
 }
 
 
