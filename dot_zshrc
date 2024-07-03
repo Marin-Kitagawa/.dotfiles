@@ -344,21 +344,13 @@ else
 fi
 
 # eval "$(starship init zsh)"
-if command -v exa &>/dev/null
-then
-  alias ls='exa --icons --long --all --group-directories-first --git --header'
-  alias ll='exa --icons --long --all --group-directories-first --git --header'
-  alias l='exa --icons --long --all --group-directories-first --git --header'
-
-fi
+alias ls='eza --icons --long --all --group-directories-first --git --header'
+alias ll='eza --icons --long --all --group-directories-first --git --header'
+alias l='eza --icons --long --all --group-directories-first --git --header'
 
 alias z='zoxide'
 alias sz='source ~/.zshrc'
-
-if command -v xcp &>/dev/null
-then
-  alias cp='xcp'
-fi
+alias cp='xcp'
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
