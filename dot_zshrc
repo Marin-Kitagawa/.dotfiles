@@ -35,7 +35,7 @@ bindkey "\e[B" history-search-forward
 
 # Custom aliases
 alias cls='clear'
-alias md='mkdir'
+alias md='mkdir -p'
 alias rmrf='rm -rf'
 
 # Custom Functions
