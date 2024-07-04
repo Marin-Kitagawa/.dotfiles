@@ -398,7 +398,7 @@ CARGOPATH="/home/marinkitagawa/.cargo/bin/"
 echo $PATH | grep -q $CARGOPATH || export PATH="$PATH:$CARGOPATH"
 
 
-export EDITOR=nvim
+EDITOR=nvim
 
 # Installing Prezto
 # source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
