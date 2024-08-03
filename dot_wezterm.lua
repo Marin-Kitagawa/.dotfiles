@@ -20,6 +20,10 @@ config = {
 	font = wezterm.font "FiraCode Nerd Font",
 	window_background_opacity = 0.8,
 	default_cursor_style = "BlinkingBar",
+  keys = {
+    { key = 'LeftArrow', mods = 'CTRL|SHIFT', action = 'DisableDefaultAssignment' },
+    { key = 'RightArrow', mods = 'CTRL|SHIFT', action = 'DisableDefaultAssignment' },
+  },
 }
 
 
