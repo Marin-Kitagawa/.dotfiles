@@ -1,0 +1,1 @@
+vscodium-bin{,-marketplace} git{kraken,burler-bin} git{kraken,butler-bin} autojump-rs-git autojump-rs onlyoffice-bin 
