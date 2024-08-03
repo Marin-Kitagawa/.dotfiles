@@ -411,3 +411,6 @@ ghcuc () {
     git clone https://gihub.com/$(xclip -o)
 }
 cls
+
+eval "$(sheldon source)"
+
