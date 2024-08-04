@@ -1,1 +1,1 @@
-autojump-rs autojump-rs-git git{kraken,burler-bin} git{kraken,butler-bin} mods onlyoffice-bin vscodium-bin{,-marketplace} 
+autojump-rs autojump-rs-git git{kraken,butler-bin} mods onlyoffice-bin vscodium-bin{,-marketplace} 
