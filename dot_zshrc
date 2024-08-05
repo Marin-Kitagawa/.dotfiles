@@ -36,7 +36,6 @@ bindkey "\e[B" history-search-forward
 # Custom aliases
 alias cls='clear'
 alias md='mkdir -p'
-alias rmrf='rm -rf'
 
 # Custom Functions
 mcd() {
@@ -398,17 +397,20 @@ CARGOPATH="/home/marinkitagawa/.cargo/bin/"
 echo $PATH | grep -q $CARGOPATH || export PATH="$PATH:$CARGOPATH"
 
 
-EDITOR=nvim
+export EDITOR=nvim
 
 # Installing Prezto
 # source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
-ghcu () {
-    git clone https://github.com/$1
+function gcl {
+    gum spin --spinner dot --title "Cloning $1..." -- git clone "https://github.com/$1"
 }
 
 ghcuc () {
     git clone https://gihub.com/$(xclip -o)
+}
+function rmrf () {
+  gum confirm && rm -rf $1 || echo "File not removed";
 }
 cls
 
