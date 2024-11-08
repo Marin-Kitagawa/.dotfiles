@@ -1,0 +1,13 @@
+files=(
+  "ohmy"
+  "plugins"
+  "aliases"
+  "functions"
+  "options"
+  "env"
+  "init"
+)
+
+for file in "${files[@]}"; do
+  source "$HOME/.config/zsh/$file.zsh"
+done
