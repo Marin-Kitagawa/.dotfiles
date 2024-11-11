@@ -10,7 +10,7 @@ mcd() {
 # Go back `n` levels
 back () {
     for i in `seq 1 $1`; do
-        cd ..
+        \cd ..
     done
 }
 

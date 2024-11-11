@@ -192,3 +192,5 @@ alias sz='source ~/.zshrc'
 alias cp='xcp'
 
 alias shopt='/usr/bin/shopt'
+alias btop='btop --utf-force'
+alias docker='sudo docker'
