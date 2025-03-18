@@ -193,4 +193,8 @@ alias cp='xcp'
 
 alias shopt='/usr/bin/shopt'
 alias btop='btop --utf-force'
+
+# Docker Aliases
 alias docker='sudo docker'
+alias drmi='docker rmi'
+alias drm='docker rm'
