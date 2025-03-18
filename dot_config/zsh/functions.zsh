@@ -52,3 +52,19 @@ ghcuc () {
 function rmrf () {
   gum confirm && rm -rf $1 || echo "File not removed";
 }
+
+# Docker functions
+
+function radi {
+  for i in $(docker images -q)
+  do
+    docker rmi $i --force
+  done
+}
+
+function radc {
+  for i in $(docker ps -q)
+  do
+    docker rm $i --force
+  done
+}
